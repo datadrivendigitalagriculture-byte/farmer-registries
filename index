@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Farmers Registry &amp; Use Cases — Deep Dive · 18 Countries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-sidebar:#0d1b2a;
+  --primary:#01696f;
+  --green:#437a22;
+  --blue:#006494;
+  --amber:#d19900;
+  --gray-badge:#6b7280;
+  --bg:#f8f9fa;
+  --bg-card:#fff;
+  --text:#1a1a2e;
+  --text-muted:#6b7280;
+  --border:#e5e7eb;
+  --shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.06);
+  --shadow-lg:0 4px 12px rgba(0,0,0,.1);
+  --radius:10px;
+  --radius-sm:6px;
+  --sidebar-w:260px;
+  --font-body:'Inter',sans-serif;
+  --font-heading:'DM Serif Display',serif;
+}
+[data-theme="dark"]{
+  --bg:#111827;--bg-card:#1f2937;--text:#f3f4f6;--text-muted:#9ca3af;
+  --border:#374151;--shadow:0 1px 3px rgba(0,0,0,.3);--shadow-lg:0 4px 12px rgba(0,0,0,.4);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:var(--sidebar-w);background:var(--bg-sidebar);color:#e2e8f0;display:flex;flex-direction:column;z-index:1000;transition:transform .3s ease}
+.sidebar-header{padding:28px 22px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.sidebar-header h1{font-family:var(--font-heading);font-size:1.2rem;font-weight:400;color:#fff;line-height:1.35;letter-spacing:-.01em}
+.sidebar-header .subtitle{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:#64748b;margin-top:6px;font-weight:500}
+.sidebar-nav{flex:1;padding:16px 0}
+.sidebar-nav a{display:flex;align-items:center;gap:12px;padding:11px 22px;color:#94a3b8;text-decoration:none;font-size:.85rem;font-weight:500;border-left:3px solid transparent;transition:all .15s ease}
+.sidebar-nav a:hover,.sidebar-nav a.active{color:#fff;background:rgba(1,105,111,.18);border-left-color:var(--primary)}
+.sidebar-nav a svg{width:18px;height:18px;flex-shrink:0;opacity:.7}
+.sidebar-nav a:hover svg,.sidebar-nav a.active svg{opacity:1}
+.sidebar-footer{padding:16px 22px;border-top:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;gap:10px}
+.theme-toggle{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:.78rem;color:#94a3b8;background:none;border:none;padding:4px 0}
+.theme-toggle:hover{color:#fff}
+.theme-toggle .toggle-track{width:36px;height:20px;background:#374151;border-radius:10px;position:relative;transition:background .2s}
+.theme-toggle .toggle-thumb{width:16px;height:16px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:transform .2s}
+[data-theme="dark"] .theme-toggle .toggle-track{background:var(--primary)}
+[data-theme="dark"] .theme-toggle .toggle-thumb{transform:translateX(16px)}
+.sidebar-footer a{color:#64748b;font-size:.7rem;text-decoration:none}
+.sidebar-footer a:hover{color:#94a3b8}
+.hamburger{display:none;position:fixed;top:14px;left:14px;z-index:1100;background:var(--bg-sidebar);border:none;color:#fff;padding:8px;border-radius:8px;cursor:pointer;box-shadow:var(--shadow-lg)}
+.hamburger svg{width:22px;height:22px}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:999}
+.overlay.show{display:block}
+.main{margin-left:var(--sidebar-w);padding:32px 36px 48px}
+.section{display:none}.section.active{display:block}
+.section-title{font-family:var(--font-heading);font-size:1.8rem;margin-bottom:4px}
+.section-subtitle{color:var(--text-muted);font-size:.88rem;margin-bottom:28px}
+.kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:24px}
+.kpi-card{background:var(--bg-card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);border:1px solid var(--border);text-align:center}
+.kpi-card .kpi-value{font-size:2rem;font-weight:700;color:var(--primary);line-height:1.1}
+.kpi-card .kpi-label{font-size:.75rem;color:var(--text-muted);margin-top:4px;font-weight:500;text-transform:uppercase;letter-spacing:.05em}
+.kpi-card .kpi-sub{font-size:.7rem;color:var(--text-muted);margin-top:2px}
+.maturity-row{display:flex;gap:14px;margin-bottom:24px;flex-wrap:wrap}
+.maturity-badge{display:flex;align-items:center;gap:8px;padding:10px 20px;border-radius:var(--radius);font-weight:600;font-size:.9rem;cursor:pointer;transition:transform .15s,box-shadow .15s;border:2px solid transparent;color:#fff}
+.maturity-badge:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.maturity-badge.advanced{background:var(--green)}
+.maturity-badge.operational{background:var(--blue)}
+.maturity-badge.emerging{background:var(--amber)}
+.maturity-badge.nosystem{background:var(--gray-badge)}
+.maturity-badge .badge-count{font-size:1.4rem;font-weight:700}
+.chart-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+.chart-card{background:var(--bg-card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);border:1px solid var(--border)}
+.chart-card h3{font-family:var(--font-heading);font-size:1.05rem;margin-bottom:14px}
+.chart-card canvas{max-height:300px}
+.filters-row{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
+.filters-row input,.filters-row select{padding:9px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-card);color:var(--text);font-size:.85rem;font-family:var(--font-body)}
+.filters-row input{flex:1;min-width:200px}
+.filters-row select{min-width:160px}
+.country-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.country-card{background:var(--bg-card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);border:1px solid var(--border);cursor:pointer;transition:transform .15s,box-shadow .15s}
+.country-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.country-card-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.country-card-header img{width:32px;height:auto;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
+.country-card-header h4{font-size:.95rem;font-weight:600;flex:1}
+.maturity-pill{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.65rem;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:.04em}
+.maturity-pill.advanced{background:var(--green)}
+.maturity-pill.operational{background:var(--blue)}
+.maturity-pill.emerging{background:var(--amber)}
+.maturity-pill.nosystem{background:var(--gray-badge)}
+.region-pill{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.62rem;font-weight:500;background:rgba(1,105,111,.1);color:var(--primary);margin-left:4px}
+[data-theme="dark"] .region-pill{background:rgba(1,105,111,.25)}
+.country-card .registry-name{font-size:.78rem;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px}
+.country-card .farmers-count{font-size:1.3rem;font-weight:700;color:var(--primary);margin-bottom:8px}
+.integration-indicators{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.integration-indicators span{font-size:.68rem;font-weight:500;padding:2px 7px;border-radius:4px}
+.ind-yes{background:rgba(67,122,34,.12);color:var(--green)}
+.ind-no{background:rgba(107,114,128,.1);color:var(--gray-badge)}
+[data-theme="dark"] .ind-yes{background:rgba(67,122,34,.25)}
+[data-theme="dark"] .ind-no{background:rgba(107,114,128,.25)}
+.uc-count-badge{display:inline-block;background:rgba(1,105,111,.1);color:var(--primary);padding:2px 8px;border-radius:12px;font-size:.7rem;font-weight:600}
+[data-theme="dark"] .uc-count-badge{background:rgba(1,105,111,.25)}
+.modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2000;justify-content:center;align-items:flex-start;padding:40px 20px;overflow-y:auto}
+.modal-backdrop.show{display:flex}
+.modal{background:var(--bg-card);border-radius:var(--radius);max-width:780px;width:100%;box-shadow:var(--shadow-lg);position:relative;animation:modalIn .25s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:14px;right:14px;background:none;border:none;cursor:pointer;color:var(--text-muted);font-size:1.5rem;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .15s}
+.modal-close:hover{background:var(--border)}
+.modal-header{padding:24px 28px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.modal-header img{width:48px;height:auto;border-radius:4px;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
+.modal-header h2{font-family:var(--font-heading);font-size:1.4rem}
+.modal-body{padding:24px 28px 28px}
+.modal-body .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin-bottom:20px}
+.modal-body .detail-item label{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);font-weight:600;display:block;margin-bottom:2px}
+.modal-body .detail-item p{font-size:.88rem}
+.modal-body .tag-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.modal-body .tag-pill{padding:4px 12px;border-radius:20px;font-size:.73rem;font-weight:500;background:rgba(1,105,111,.1);color:var(--primary)}
+[data-theme="dark"] .modal-body .tag-pill{background:rgba(1,105,111,.25)}
+.modal-body .partner-pill{padding:3px 10px;border-radius:16px;font-size:.7rem;font-weight:500;background:var(--border);color:var(--text)}
+.modal-section{margin-bottom:18px}
+.modal-section h4{font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-bottom:8px}
+.modal-section p,.modal-section .text-block{font-size:.86rem;line-height:1.7}
+.accent-box{padding:14px 18px;border-radius:var(--radius-sm);margin-bottom:14px;font-size:.86rem;line-height:1.7}
+.accent-box.green{border-left:4px solid var(--green);background:rgba(67,122,34,.05)}
+.accent-box.amber{border-left:4px solid var(--amber);background:rgba(209,153,0,.05)}
+[data-theme="dark"] .accent-box.green{background:rgba(67,122,34,.1)}
+[data-theme="dark"] .accent-box.amber{background:rgba(209,153,0,.1)}
+.modal-sources{font-size:.72rem;color:var(--text-muted);margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+.integration-pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.int-pill{padding:4px 12px;border-radius:20px;font-size:.72rem;font-weight:600}
+.int-pill.yes{background:rgba(67,122,34,.12);color:var(--green)}
+.int-pill.no{background:rgba(107,114,128,.1);color:var(--gray-badge)}
+[data-theme="dark"] .int-pill.yes{background:rgba(67,122,34,.25)}
+[data-theme="dark"] .int-pill.no{background:rgba(107,114,128,.25)}
+.uc-chart-card{background:var(--bg-card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:24px;max-height:420px;position:relative}
+.uc-chart-card canvas{max-height:360px}
+.uc-chart-card h3{font-family:var(--font-heading);font-size:1.05rem;margin-bottom:14px}
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.uc-card{background:var(--bg-card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);border:1px solid var(--border)}
+.uc-card .uc-icon{font-size:1.8rem;margin-bottom:6px}
+.uc-card h4{font-size:.95rem;font-weight:600;margin-bottom:6px}
+.uc-card .uc-count{font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:8px}
+.uc-progress{width:100%;height:8px;background:var(--border);border-radius:4px;overflow:hidden;margin-bottom:12px}
+.uc-progress-bar{height:100%;background:var(--primary);border-radius:4px;transition:width .6s ease}
+.uc-card .country-list{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.uc-card .country-list span{padding:2px 8px;border-radius:12px;font-size:.62rem;font-weight:500;background:var(--border);color:var(--text)}
+.uc-card .uc-desc{font-size:.78rem;color:var(--text-muted);line-height:1.5}
+@media(max-width:1200px){
+  .kpi-row{grid-template-columns:repeat(3,1fr)}
+  .country-grid,.uc-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  .sidebar{transform:translateX(-100%)}
+  .sidebar.open{transform:translateX(0)}
+  .hamburger{display:flex}
+  .main{margin-left:0;padding:24px 18px 40px;padding-top:60px}
+  .kpi-row{grid-template-columns:repeat(2,1fr)}
+  .chart-row{grid-template-columns:1fr}
+  .country-grid,.uc-grid{grid-template-columns:1fr}
+  .modal-body .detail-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .kpi-row{grid-template-columns:1fr}
+  .maturity-row{flex-direction:column}
+}
+
+</style>
+</head>
+<body>
+
+<!-- Hamburger -->
+<button class="hamburger" onclick="toggleSidebar()" aria-label="Menu">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h1>Digital Farmers Registry &amp; Use Cases</h1>
+    <div class="subtitle">Deep Dive · 18 Countries</div>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="#" data-section="overview" class="active" onclick="showSection('overview',this);return false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Overview
+    </a>
+    <a href="#" data-section="profiles" onclick="showSection('profiles',this);return false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Country Profiles
+    </a>
+    <a href="#" data-section="usecases" onclick="showSection('usecases',this);return false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      Use Cases
+    </a>
+  </nav>
+  <div class="sidebar-footer">
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <div class="toggle-track"><div class="toggle-thumb"></div></div>
+      <span id="themeLabel">Dark mode</span>
+    </button>
+    <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+  </div>
+</aside>
+
+<!-- Main Content -->
+<div class="main">
+  <!-- OVERVIEW SECTION -->
+  <div class="section active" id="sec-overview">
+    <h2 class="section-title">Overview</h2>
+    <p class="section-subtitle">Aggregate view of digital farmer registries across 18 countries</p>
+    <div class="kpi-row" id="kpiRow"></div>
+    <div class="maturity-row" id="maturityRow"></div>
+    <div class="chart-row">
+      <div class="chart-card"><h3>Maturity Distribution</h3><canvas id="chartMaturity"></canvas></div>
+      <div class="chart-card"><h3>Regional Distribution</h3><canvas id="chartRegion"></canvas></div>
+    </div>
+    <div class="chart-row">
+      <div class="chart-card"><h3>Use Cases by Frequency</h3><canvas id="chartUseCases"></canvas></div>
+      <div class="chart-card"><h3>Integration Features</h3><canvas id="chartIntegration"></canvas></div>
+    </div>
+    <div class="chart-row">
+      <div class="chart-card" style="grid-column:1/-1"><h3>Top 5 Countries by Farmers Registered</h3><canvas id="chartTop5"></canvas></div>
+    </div>
+  </div>
+
+  <!-- COUNTRY PROFILES SECTION -->
+  <div class="section" id="sec-profiles">
+    <h2 class="section-title">Country Profiles</h2>
+    <p class="section-subtitle">Detailed information on each country's digital farmer registry</p>
+    <div class="filters-row">
+      <input type="text" id="searchInput" placeholder="Search countries..." oninput="filterCountries()">
+      <select id="regionFilter" onchange="filterCountries()"><option value="">All Regions</option></select>
+      <select id="maturityFilter" onchange="filterCountries()"><option value="">All Maturity Levels</option></select>
+    </div>
+    <div class="country-grid" id="countryGrid"></div>
+  </div>
+
+  <!-- USE CASES SECTION -->
+  <div class="section" id="sec-usecases">
+    <h2 class="section-title">Use Cases Analysis</h2>
+    <p class="section-subtitle">How digital farmer registries are being used across 18 countries</p>
+    <div class="uc-chart-card"><h3>Use Case Adoption Frequency</h3><canvas id="chartUCFreq"></canvas></div>
+    <div class="uc-grid" id="ucGrid"></div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modal"></div>
+</div>
+
+<script>
+const DATA = [{"country":"Burkina Faso","iso":"BF","region":"Africa","lat":12.3714,"lng":-1.5197,"registryName":"Enquête Permanente Agricole (EPA); Recensement Général de l'Agricul...","registryFullName":"Enquête Permanente Agricole (EPA); Recensement Général de l'Agriculture (RGA); Registre des exploitations agro-sylvo-pastorales (CNA); E-voucher subsidy system","yearEstablished":1993,"farmersRegistered":3000000,"farmersRegisteredLabel":"EPA 2023-2024 surveyed 5,304 agricultural households across 884 villages (sample, nat'l rep., est. total ag households ~2-3M based on 80% pop in ag African Agri Mag 2025); no full registry count found","leadAgency":"Ministère de l'Agriculture, des Ressources Animales et Halieutiques (MARAH/MAERAH) via DGESS; Chambre Nationale d'Agriculture (CNA) for exploitation register","status":"Fully operational annual digital survey (EPA: CAPI tablets, microdata released June 2025); e-vouc...","maturityLevel":"Advanced","nationalIdIntegration":false,"geospatialData":false,"dpiIntegration":true,"useCases":["Extension & Advisory Services","Livestock Management","Policy & Planning","Subsidies & Input Distribution"],"useCaseDetails":"EPA: Policymakers use for ag aggregates/food security (e.g. yield est. ±10% error/prov); e-voucher: 2020-21 pilot targeted inputs/fertilizer (21.8kg/ha usage), reduced fraud, reached remote farmers via SMS codes AGRA PDF","dataPoints":["EPA: crop yields/production","input use (seeds/fertilizers/pesticides)","farming practices","livestock holdings/management","food security indicators","env/practices FAO EPA"],"keyPartners":["FAO (50x2030 Initiative)","AGRA (e-voucher)","GIZ","World Bank (budget support)"],"technologyPlatform":"CAPI tablets/digital enumeration (EPA); mobile/SMS/mobile devices (e-voucher); no central platform noted","achievements":"EPA 2023-24: nat'l coverage 45 prov, 99% response, microdata public June 2025; e-voucher pilot success, full scale-ready 2021; contrib to ag stats modernization","challenges":"No comprehensive digital registry found (survey-based vs continuous); potential low coverage for dynamic tracking; enforcement/data privacy in digital ag limited [academic papers]","sources":"FAO EPA News, INSD EPA Catalog, MAERAH Site, CNA Missions, AGRA E-Voucher, African Agri Mag"},{"country":"Chad","iso":"TD","region":"Africa","lat":12.1348,"lng":15.0557,"registryName":"ProPAD E-Voucher Platform (project-specific digital farmer database...","registryFullName":"ProPAD E-Voucher Platform (project-specific digital farmer database); RGPH-3/RGA (national digital agriculture census planned for 2026)","yearEstablished":2021,"farmersRegistered":133656,"farmersRegisteredLabel":"133,656 producers (41% women) on ProPAD e-voucher platform as of 2023 World Bank ISR, Banque Mondiale","leadAgency":"Ministry of Agricultural Production and Transformation (MPTA) / ProPAD project; INSEED for RGPH-3/RGA","status":"ProPAD: Fully operational in pilot areas (Mandoul, Moyen Chari, Salamat provinces) until project ...","maturityLevel":"Advanced","nationalIdIntegration":false,"geospatialData":false,"dpiIntegration":true,"useCases":["Extension & Advisory Services","Subsidies & Input Distribution"],"useCaseDetails":"E-vouchers: 133,656 producers in 5 pilot cantons received subsidized seeds (maize/sorghum/sesame), NPK/urea fertilizers, pesticides; >5,000t seeds to organizations Banque Mondiale. E-extension: 60,000 households received recommendations, 118,438 calls from 30,000+ producers leading to 80% yield increases via climate-smart practices World Bank ISR","dataPoints":["Producer demographics (incl. gender)","location (project areas)","specific fields not detailed in sources"],"keyPartners":["World Bank (funding)","CORAF/WECARD","ITRAD","CIAT/Bioversity","peasant organizations"],"technologyPlatform":"Digital e-voucher platform, e-extension platform with toll-free call center (1322), mobile phones/SMS, ICT tools","achievements":"133,656 farmers enrolled, 118,438 advisory calls, >5,000 tonnes improved seeds distributed, crop yields increased up to 80%, 684,399 farmers reached with assets/services (exceeding target)","challenges":"Shortage of extension agents (addressed by platform); no national scale-up or full registry found; upcoming census to fill data gaps","sources":"World Bank Feature, Banque Mondiale Feature, ProPAD ISR Nov 2023, Alwihda RGPH-3, INSEED RGPH-3"},{"country":"Ethiopia","iso":"ET","region":"Africa","lat":9.0192,"lng":38.7525,"registryName":"Digital Farmer Registry (pilot by MoA & Digital Green)","registryFullName":"Digital Farmer Registry (pilot by MoA & Digital Green)","yearEstablished":2022,"farmersRegistered":80000,"farmersRegisteredLabel":"~80,000 pilot; 30M target by 2032","leadAgency":"Ministry of Agriculture (MoA) [MoA]","status":"Pilot scaling to 6 woredas/132 kebeles (approved ~2023); likely ongoing within Digital Agricultur...","maturityLevel":"Emerging","nationalIdIntegration":false,"geospatialData":false,"dpiIntegration":false,"useCases":["Extension & Advisory Services","Subsidies & Input Distribution"],"useCaseDetails":"Extension: Tailored advice via profiles (observed fresh registrations). Reporting: Automates, saves ~20% DA time. No large-scale program outcomes found [IFPRI]","dataPoints":["Demographics","farm characteristics","plots/parcels","livestock","input demand","advisory received","technology adoption [Digital Green]"],"keyPartners":["Digital Green","IFPRI","Bill & Melinda Gates Foundation","FCDO","Precision Development (PxD)","ATI [IFPRI]"],"technologyPlatform":"Mobile app (tablets for DAs), web portal [Digital Green]","achievements":"13,800 registered in 3-4 months; NPS 88-90%; DAs independent; scale-up approved [IFPRI]","challenges":"Data quality, poor connectivity/hardware, institutional support gaps, farmer skepticism, time-intensive [Digital Green]","sources":"Digital Green, IFPRI Project Note, MoA Roadmap, WB Connect4Impact, Agri Data Hub, findings file: /home/user/workspace/ethiopia_farmer_registry_findings.md"},{"country":"Ghana","iso":"GH","region":"Africa","lat":5.6037,"lng":-0.187,"registryName":"Ghana Agriculture and Agribusiness Platform (GhAAP); Planting for F...","registryFullName":"Ghana Agriculture and Agribusiness Platform (GhAAP); Planting for Food and Jobs 2.0 (PFJ 2.0) farmer registry; Feed Ghana Programme database","yearEstablished":2023,"farmersRegistered":1200000,"farmersRegisteredLabel":"Over 1.2 million farmers (World Bank, May 2025); Feed Ghana: 220,255 farmers (July 2025)","leadAgency":"Ministry of Food and Agriculture (MoFA)","status":"Fully operational and scaling nationally across 16 regions/261 districts; used for input distribu...","maturityLevel":"Advanced","nationalIdIntegration":true,"geospatialData":true,"dpiIntegration":true,"useCases":["Credit & Financial Services","Extension & Advisory Services","Insurance & Risk Management","Market Access & Linkages","Policy & Planning","Subsidies & Input Distribution"],"useCaseDetails":"Input distribution/emergency: $40M to 155k farmers (macro crisis/floods, 74-86% receipt, 93-98% correct NPK); $85M to 500k (dry spell); transparent via ID/geo/photos (World Bank). PFJ 2.0: zero-interest credit via aggregators. Feed Ghana: 220k farmers mapped for planning.","dataPoints":["Bio: surname","other names","DOB","Ghana Card","gender","nationality","phone","email","Location: digital address","region/district/constituency/electoral area"],"keyPartners":["World Bank (FSRP)","MoFA","possibly USAID/FAO (general ag support)"],"technologyPlatform":"Web/mobile platform (ghaap.com); digital database for real-time capture/M&E; cloud-based (MoFA)","achievements":"1.2M+ farmers; $125M inputs to 655k in crises; 74-98% delivery success (WB survey); rapid emergency response","challenges":"Minor distribution discrepancies; needs more oversight; general: rural access, literacy for digital","sources":"MoFA PFJ Registration, World Bank GhAAP, GhAAP Register, MoFA PFJ2, WB FSRP, MoFA Agribusiness"},{"country":"Kenya","iso":"KE","region":"Africa","lat":-1.2921,"lng":36.8219,"registryName":"Kenya Integrated Agricultural Management Information System (KIAMIS)","registryFullName":"Kenya Integrated Agricultural Management Information System (KIAMIS)","yearEstablished":2019,"farmersRegistered":7100000,"farmersRegisteredLabel":"Over 7.1 million (Nov 2025, crop & livestock farmers); reports up to 7.2M by late 2025","leadAgency":"Ministry of Agriculture and Livestock Development (MoALD); hosted at Kenya Agriculture Data and Information Centre (KADIC)","status":"Fully operational nationwide (47 counties); govt-owned since Nov 2025 handover; continuous regist...","maturityLevel":"Advanced","nationalIdIntegration":false,"geospatialData":true,"dpiIntegration":true,"useCases":["Credit & Financial Services","Extension & Advisory Services","Livestock Management","Market Access & Linkages","Policy & Planning","Subsidies & Input Distribution","Traceability & Compliance"],"useCaseDetails":"E-voucher/subsidy: 1.8M vouchers/12.5M fert bags 2025-26, targeted via KIAMIS to reduce leakage/cartels, 537k received inputs early 2026; Livestock: Nat vaccination portal/ANITRAC; Extension: SMS advisories/soil info; Policy: Data-driven planning boosted production; Agripreneur: Recruitment/vetting for input dist","dataPoints":["Demographics (age/gender/marital/education/nationality)","ID (Nat ID/PIN/phone/email)","farm (GPS/size/ownership/crops/livestock/fish chains)","production/yields","livestock health/numbers","geospatial/land use"],"keyPartners":["FAO (dev/handover)","Sweden Embassy (funding)","World Bank (support)","KALRO (hosting)","counties","private agribusiness"],"technologyPlatform":"Mobile/web apps (registration/profiling), USSD/SMS e-vouchers, GIS/satellite/drone/AI/ML, relational/NoSQL DBs, cloud/data lakes/warehouses, APIs","achievements":"7.1M+ registered (53% women); 1.8M e-vouchers short rains 2025; maize yield 44M→70M bags (2022-25); Africa model (delegations Bangladesh/Mozambique/SA); transparent targeting/anti-cartel","challenges":"Data quality/gaps, high census costs, limited GIS skills, capacity/resources, stakeholder resistance, continuous reg sustainability, rural connectivity/digital literacy","sources":"KIAMIS, FAO Handover Jan 2026, The Star Nov 2025, MoALD Data Gov Framework 2024, Eagmark Nov 2025, Citizen Digital"},{"country":"Malawi","iso":"MW","region":"Africa","lat":-13.2543,"lng":33.7741,"registryName":"Digital Farmer Register (NAMIS); AIP Beneficiary Registration; Farm...","registryFullName":"Digital Farmer Register (NAMIS); AIP Beneficiary Registration; Farm Household Registration module","yearEstablished":2017,"farmersRegistered":3446147,"farmersRegisteredLabel":"3,446,147 farming households (Dec 2024) Southern African Herald, Nyasa Times","leadAgency":"Ministry of Agriculture (NAMIS Coordinating Unit, DAPS) CRAFS, Agriculture.gov.mw","status":"Operational nationwide rollout complete for farmer module (2024); annual updates, enhancements on...","maturityLevel":"Advanced","nationalIdIntegration":true,"geospatialData":true,"dpiIntegration":true,"useCases":["Extension & Advisory Services","Insurance & Risk Management","Livestock Management","Market Access & Linkages","Policy & Planning","Subsidies & Input Distribution"],"useCaseDetails":"- Subsidy/AIP: e-voucher pilot 12 districts, data-driven targeting 1M farmers, bundled extension/soil practices (World Bank US$20M pilot 2025). - Food Security: Bi-weekly household assessments, production estimates. - Extension: Lead farmers tracked. - Planning: Accurate data for policy/interventions World Bank, DHIS2","dataPoints":["Household demographics","farm size/land parcels GPS","crops/livestock","admin location","lead farmer status","questionnaires (std categories)","food stocks DHIS2","CRAFS"],"keyPartners":["World Bank (ASWAP II","FoodSystems 2030)","University of Malawi CRAFS","LUANAR CARD","DHIS2 developers CRAFS","World Bank"],"technologyPlatform":"DHIS2 Tracker Capture (mobile app, offline, ID scan, dashboards); web portals e.g. data-entry.agriculture.gov.mw CRAFS, DHIS2","achievements":"3.4M+ households registered/geo-mapped (2024); data cleaning/validation; custom DHIS2 app; AIP targeting 1M farmers; basis for digital transformation Southern African Herald, World Bank","challenges":"Data inconsistencies/missing info; requires annual updates/task force; gap analysis needed CRAFS","sources":"CRAFS Jun2025, Southern African Herald Dec2024, World Bank Oct2025, DHIS2, Nyasa Times, Agriculture.gov.mw"},{"country":"Mali","iso":"ML","region":"Africa","lat":12.6392,"lng":-8.0029,"registryName":"Recensement Général de l'Agriculture (RGA); E-Voucher farmer databa...","registryFullName":"Recensement Général de l'Agriculture (RGA); E-Voucher farmer database (WAAPP)","yearEstablished":2024,"farmersRegistered":1036434,"farmersRegisteredLabel":"RGA: 1,036,434 producers (prelim Nov 2024, APAnews); E-Voucher: 93,054 (2017-18, World Bank)","leadAgency":"Ministry of Agriculture (Ministre Daniel Siméon Kelema for RGA; coordinates E-Voucher)","status":"RGA: Ongoing (launched Jul 2024, prelim results Nov 2024, updates Mar 2025); E-Voucher: Pilot/sca...","maturityLevel":"Emerging","nationalIdIntegration":false,"geospatialData":true,"dpiIntegration":false,"useCases":["Extension & Advisory Services","Policy & Planning","Subsidies & Input Distribution"],"useCaseDetails":"E-Voucher subsidy: 24k eligible farmers, 18k redeemed for fertilizer (maize/millet/rice), targeted vulnerable/weather-affected, improved transparency (World Bank); RGA planning: Data for targeted actions/security/food productivity (APAnews)","dataPoints":["RGA: Farms (573k)","producers (1M+)","gender","area (2.3M ha)","livestock (bovins/ovins etc.)","cartography","E-Voucher: Farmer demographics","phone","planted areas/crops","geo-referencing farmland"],"keyPartners":["World Bank (WAAPP for E-Voucher)","FAO/INSTAT possible for RGA (prior censuses)"],"technologyPlatform":"E-Voucher: SMS platform (short code 36026), electronic database; RGA: Electronic surveys/database implied","achievements":"E-Voucher: 93k registered, 18k vouchers collected (74% rate), 10k tons fertilizer; RGA: Comprehensive mapping 573k farms/1M producers prelim","challenges":"E-Voucher: Illiteracy (SMS deletion), network issues, duplicates (13%), late inputs, low female (20%), capacity; RGA: Ongoing, incomplete coverage Nov 2024","sources":"APAnews Nov 2024, World Bank E-Voucher 2019, Min Ag Facebook Mar 2025, magriculture.gouv.ml"},{"country":"Niger","iso":"NE","region":"Africa","lat":17.6078,"lng":8.0817,"registryName":"Electronic beneficiary database for e-voucher program (no centraliz...","registryFullName":"Electronic beneficiary database for e-voucher program (no centralized national digital farmer registry identified); Cellule de géomatique et de digitalisation (CGDig) for agricultural statistics","yearEstablished":2017,"farmersRegistered":47678,"farmersRegisteredLabel":"47,678 farmers identified (2018); 30,838 households benefited (2018) [World Bank e-voucher report]","leadAgency":"General Directorate for Agriculture (DGA), Ministry of Agriculture and Livestock (MAG/EL) [FAO report]","status":"Operational for input subsidies (last detailed 2018); CGDig active since 2021 for digital surveys...","maturityLevel":"Operational","nationalIdIntegration":false,"geospatialData":true,"dpiIntegration":true,"useCases":["Policy & Planning","Subsidies & Input Distribution","Traceability & Compliance"],"useCaseDetails":"E-voucher: 30,838 households received seed kits (10kg cereals, 5kg cowpea) via SMS in 20 municipalities; targeted vulnerable areas using safety nets data; improved transparency/traceability but 50% delays in delivery [World Bank e-voucher report]. CGDig pilots: digital crop estimation surveys in select communes 2022-2024 [FAO report]","dataPoints":["Farmer demographics","vulnerability status","planted areas","crop types","geo-referencing of farmland","household data from safety nets [World Bank e-voucher report]"],"keyPartners":["World Bank (WAAPP","PASEC)","FAO (Morocco-Niger cooperation)","Kingdom of Morocco","telecom operators [FAO report]","World Bank e-voucher report"],"technologyPlatform":"SMS-based e-voucher platform (USSD short code 4042), digital survey platforms, GIS, drones, satellite remote sensing, open-source geospatial platforms [Niger e-Agriculture Strategy]","achievements":"Two e-voucher cycles completed (2017-2018); CGDig established 2021 with training and pilot digital surveys; government budget financing for inputs [World Bank e-voucher report]","challenges":"Network disruptions, late input delivery, limited ICT skills at DGA, illiteracy/no phones, stockouts at agro-dealers; no recent data post-2018 [World Bank e-voucher report], Niger e-Agriculture Strategy","sources":"FAO Digitization Report, World Bank E-Voucher, Niger e-Agriculture Strategy 2023-2027, Ministry Website"},{"country":"Senegal","iso":"SN","region":"Africa","lat":14.4974,"lng":-14.4524,"registryName":"Enquête Agricole Annuelle (EAA); Pilot digital subsidy enrollment s...","registryFullName":"Enquête Agricole Annuelle (EAA); Pilot digital subsidy enrollment system (unnamed); Unique Registry of the State (for targeting)","yearEstablished":2017,"farmersRegistered":50000,"farmersRegisteredLabel":"Pilot: 50,000 producers enrolled (2024, out of 200,000 targeted); EAA frame: 755,500 agricultural households (2013 census, used 2023)","leadAgency":"Direction de l’Analyse, de la Prévision et des Statistiques Agricoles (DAPSA), Ministry of Agriculture, Food Sovereignty and Livestock (MASAE/MAER)","status":"No fully operational national digital farmer registry identified as of 2026. EAA is ongoing annua...","maturityLevel":"Advanced","nationalIdIntegration":false,"geospatialData":true,"dpiIntegration":false,"useCases":["Land Administration","Policy & Planning","Subsidies & Input Distribution"],"useCaseDetails":"Subsidy pilot (2024, Tivaouane/Nioro): 50k/200k enrolled, transparent input distribution, fraud prevention, need-based allocation. EAA: Annual production estimates (e.g., 1.5M tonnes peanuts 2022-23), SDG 5.a.1 (7.5% ag pop with land rights).","dataPoints":["Crops (area sown","production","utilization)","irrigated/permanent crops","livestock (heads","fluxes","products)","equipment/machinery","storage infrastructure","community services"],"keyPartners":["FAO (AGRISurvey","SAIDA/ASDIA","TAP-AIS)","World Bank (AgriConnect","IFC for subsidies)","USAID (EFAT)","AfDB","IFAD","WFP","AFD"],"technologyPlatform":"Digital tools for surveys/dissemination (microdata platforms, interactive tables); mobile/digital enrollment for subsidies (unspecified); no central platform identified.","achievements":"EAA: Full AGRISurvey modules implemented (first country); SDG indicators generated; 50k farmers enrolled in pilot (fraud reduction); ASDIA: 300k+ farmers receiving advisories.","challenges":"No comprehensive national digital registry; reliance on 2013 census frame; low digital adoption in rural areas; fraud in subsidies (addressed by pilot).","sources":"DAPSA EAA 2022-2023, FAO AGRISurvey Senegal, Agence Ecofin Pilot, World Bank AgriConnect, GAFSP Report.pdf), FAO SAIDA"},{"country":"Sierra Leone","iso":"SL","region":"Africa","lat":8.4606,"lng":-11.7799,"registryName":"Ministry of Agriculture and Food Security Digital Farmer Registry S...","registryFullName":"Ministry of Agriculture and Food Security Digital Farmer Registry System / National Digital Farmer Registry (DFR)","yearEstablished":2025,"farmersRegistered":0,"farmersRegisteredLabel":"No data available (pre-operational; no recent registration counts found)","leadAgency":"Ministry of Agriculture and Food Security (MAFS)","status":"Planning/development phase: technical teams formed (May 2025), workshops held, NIN integration in...","maturityLevel":"Emerging","nationalIdIntegration":true,"geospatialData":false,"dpiIntegration":true,"useCases":["Extension & Advisory Services","Insurance & Risk Management","Policy & Planning","Subsidies & Input Distribution"],"useCaseDetails":"E-voucher inputs via FSRP (trained agro-dealers 2024 for 15 districts, no beneficiary #s); NIN for accurate subsidy/Feed Salone targeting; e-extension services planned; social protection/shock response linkages. FSRP","dataPoints":["Farmer demographics","households","farm activities/holdings (details sparse)"],"keyPartners":["NCRA","Food Systems Resilience Project (FSRP)","Ministry of Communications Technology & Innovation (MoCTI)","Tiwai Memory Masters","FAO (regional)","Feed Salone"],"technologyPlatform":"Mobile apps/USSD for self-registration/enumeration, real-time dashboards, cloud (NCRA DC), biometric NIN integration, DPI-compliant","achievements":"NIN integration meetings (May 2025), technical teams formed, FAO workshops (2025), aligns with digital transformation/Feed Salone","challenges":"Past fragmented/inconsistent data, duplications; implementation, infrastructure sharing","sources":"Sierraloaded May 2025, Satellite News May 2025, MAFS, FSRP, NCRA FB, multiple 2025 news"},{"country":"Somalia","iso":"SO","region":"Africa","lat":2.0469,"lng":45.3182,"registryName":"SOFAREP (Somalia Farmers Registration Platform, FAO procurement); S...","registryFullName":"SOFAREP (Somalia Farmers Registration Platform, FAO procurement); SARIS seed company registry; MoA agribusiness/cooperative registration","yearEstablished":2025,"farmersRegistered":0,"farmersRegisteredLabel":"No data available (past FAO e-voucher registered ~350,000 households in 2020)","leadAgency":"FAO (for SOFAREP); Ministry of Agriculture and Irrigation (MoAI) / SARIS for seed/agribusiness","status":"SOFAREP in procurement phase (tender closed Feb 2025), likely pilot/planned/scaling as of 2026; S...","maturityLevel":"Operational","nationalIdIntegration":false,"geospatialData":false,"dpiIntegration":false,"useCases":["Extension & Advisory Services","Subsidies & Input Distribution","Traceability & Compliance"],"useCaseDetails":"SARIS seed registration: 14 companies produced certified maize/sorghum/sesame/cowpea (2024), enabling formal seed system; e-vouchers (past FAO): 240k beneficiaries received SMS vouchers for inputs","dataPoints":["For seed companies: fields/premises inspection","seed processing/storage/gene bank verification","no farmer-level details"],"keyPartners":["FAO","World Bank","SSG","KEPHIS (Kenya)","CGIAR","NGOs (Concern","COOPi","etc.)"],"technologyPlatform":"Planned software platform (business-specific, data management); e-Fidiye mobile app; QR codes for seed certs","achievements":"SARIS registered 155 seed companies (2024), released 6 varieties (2021-2025); SOFAREP procurement completed","challenges":"No operational national farmer registry; high registration costs for startups; limited inspectors/staff; counterfeit seeds","sources":"FAO UNGM SOFAREP tender, MoA Country Report 2025, World Bank Digital ID blog, MoA website, FAO e-vouchers"},{"country":"Togo","iso":"TG","region":"Africa","lat":6.1256,"lng":1.2254,"registryName":"No unified national digital farmer registry identified. Key systems...","registryFullName":"No unified national digital farmer registry identified. Key systems: AgriPME (vulnerable farmers for subsidies, 2016); Value chain databases for pineapple/mango/corn/soybean/cassava (ProComp-supported, updating 2026); Recensement National de l'Agriculture (RNA5, 2024-2025 census)","yearEstablished":2016,"farmersRegistered":677692,"farmersRegisteredLabel":"677,692 (agricultural census 2022)","leadAgency":"Ministry of Agriculture, Livestock, Fisheries and Food Sovereignty (Ministère de l’Agriculture de la Pêche, des Ressources Animales et de la Souveraineté Alimentaire); joint with Digital Ministry f...","status":"Fragmented systems: AgriPME operational (legacy); Value chain DBs scaling with digital update com...","maturityLevel":"Emerging","nationalIdIntegration":true,"geospatialData":true,"dpiIntegration":true,"useCases":["Extension & Advisory Services","Market Access & Linkages","Policy & Planning","Subsidies & Input Distribution","Traceability & Compliance"],"useCaseDetails":"Subsidy dist.: AgriPME transferred 9k CFA/farmer via e-wallet for 3 fertilizer bags, 25k transactions by Aug 2016, full traceability; Value chains: ProComp identifies producers for inputs, advisory, markets in 5 crops, aims productivity gains (2026); RNA5/SPISA: Data for policy, e.g. Roadmap 2025, food security planning, 4000 agents deployed Agridigitale","dataPoints":["Demographics (age","sex)","farm size/superficie cultivable","location","crops/semences","vulnerability status (AgriPME)","land security","mechanization/tractors","irrigation","livestock types"],"keyPartners":["BAD (AgriPME)","GIZ/EU/BMZ (ProComp)","World Bank/FAO (RNA5/SPISA","ProMAT)","mobile operators Moov/Togocel (AgriPME) World Bank"],"technologyPlatform":"Mobile/smartphones + servers/cloud for data transfer (AgriPME, value chain DBs real-time internet); digital platforms planned; USSD/mobile money (AgriPME)","achievements":"AgriPME: 76k+ registered 2016, transparent subsidies, market/stock monitoring; RNA5: 677k households mapped (2025); value chain DBs fully digitalized (2026); ProMAT: 340k farmers to benefit TogoFirst","challenges":"No unified registry; land insecurity (78% no title, RNA5); low mechanization (6% tractors), irrigation (4%); fragmented systems; legacy data updates needed; no confirmed advanced integrations TogoFirst April 2025","sources":"Agriculture.gouv.tg, TogoFirst Value Chains, TogoFirst RNA5, Numerique.gouv AgriPME, IntelligentCIO AgriPME, World Bank ProMAT, Agridigitale RNA5"},{"country":"India","iso":"IN","region":"South Asia","lat":28.6139,"lng":77.209,"registryName":"Farmer ID / Farmers' Registry (part of AgriStack under Digital Agri...","registryFullName":"Farmer ID / Farmers' Registry (part of AgriStack under Digital Agriculture Mission); also PM-KISAN beneficiary registry","yearEstablished":2024,"farmersRegistered":84800000,"farmersRegisteredLabel":"84.8 million Farmer IDs generated as of February 4, 2026 BiometricUpdate, PIB","leadAgency":"Ministry of Agriculture and Farmers Welfare, Department of Agriculture, Cooperation & Farmers Welfare (state-level implementation)","status":"Scaling nationally; operational in multiple states (e.g., mandatory in Maharashtra since April 20...","maturityLevel":"Advanced","nationalIdIntegration":true,"geospatialData":true,"dpiIntegration":true,"useCases":["Credit & Financial Services","Extension & Advisory Services","Insurance & Risk Management","Market Access & Linkages","Policy & Planning","Subsidies & Input Distribution","Traceability & Compliance"],"useCaseDetails":"Disaster relief: Maharashtra used Farmer ID + Aadhaar banks for Rs 14k crore (US$1.54B) to 8.9M farmers post-Kharif 2025 losses. MSP procurement: Chhattisgarh covered 3.2M farmers for paddy, improving transparency/payment speed. Subsidy access: Mandatory in Maharashtra since Apr 2025. Credit: Auto-fills KCC apps, reduces docs/time from 15-20 days. Planning: Digital Crop Survey (604 districts, 285M plots Kharif 2025) for procurement/logistics. Advisory: Kisan e-Mitra (8k queries/day, 11 languages); GIS pest detection (10k workers).","dataPoints":["Demographics (name","DOB","address","photo","mobile","bank)","biometrics (Aadhaar-linked)","farm size/land records (linked dynamically)","crops sown","livestock"],"keyPartners":["Primarily Government of India (central/state)","technical support from NIC","MoUs with states","early pilots with Microsoft","Amazon (pre-2024","limited role)","no major international donors identified (govt-funded Rs 2817 crore)"],"technologyPlatform":"Digital Public Infrastructure (DPI); mobile/web self-registration, CSC-assisted, camps; federated state registries; AI/ML (Kisan e-Mitra, pest surveillance), GIS/satellite (ISRO NRSC), cloud APIs, UFSI gateway","achievements":"84.8M+ Farmer IDs by Feb 2026 (target 110M by 2027); Maharashtra: Rs 14,000 crore DBT to 8.9M farmers for Kharif 2025 losses; Chhattisgarh: MSP procurement for 3.2M farmers; Gujarat first to 25% coverage (Dec 2024); Kisan e-Mitra handles 8k queries/day; pest system for 10k workers","challenges":"Digital divide (poor rural internet/electricity, low digital literacy - only 2% use agri apps); exclusion of landless/tenant farmers/sharecroppers; data privacy concerns (despite DPDP Act compliance); uneven state adoption; diverse agro-climatic zones","sources":"BiometricUpdate Feb 2026, PIB Gujarat Dec 2024, PIB outcomes Feb 2026, PIB digital initiatives, MicroSave AgriStack, Bajaj Finserv, PIB DAM approval"},{"country":"Philippines","iso":"PH","region":"East Asia & Pacific","lat":14.5995,"lng":120.9842,"registryName":"Registry System for Basic Sectors in Agriculture (RSBSA)","registryFullName":"Registry System for Basic Sectors in Agriculture (RSBSA)","yearEstablished":2011,"farmersRegistered":9400000,"farmersRegisteredLabel":"9.4 million agri-fishery stakeholders as of May 2024 (largest recent figure)","leadAgency":"Department of Agriculture (DA); originally Department of Budget and Management (DBM)","status":"Fully operational and actively updated (profiling, georeferencing, interventions monitoring); dig...","maturityLevel":"Advanced","nationalIdIntegration":false,"geospatialData":true,"dpiIntegration":true,"useCases":["Credit & Financial Services","Extension & Advisory Services","Insurance & Risk Management","Land Administration","Livestock Management","Policy & Planning","Subsidies & Input Distribution"],"useCaseDetails":"Insurance: PCIC uses RSBSA for premium subsidies/auto-coverage (rice/corn), insured 455k (2014 example); Subsidies: Targeting for RCEF seeds/fertilizers, P20/kg rice program; Credit: AFFP P1B budget via LBP/PCFC; Georeferencing supports precise interventions/planning","dataPoints":["Demographics (name","DOB","POB","parents/spouse names","education)","status (CCT","ARB)","farm details (parcels","size","ownership/tenure"],"keyPartners":["Government: DBM","PSA","DAR","DILG","DOST-ICTO","World Bank (consultations)","no major international donors identified for core system"],"technologyPlatform":"Web-based (RSBSA Finder public search, RSBSAPP-LGU for encoding/validation, FFRS database); GPS handheld devices for georeferencing; Kobo Toolbox/Combo Toolbox apps; online upload to RCM/ICTS systems","achievements":"9.4M registered (2024); enabled targeted interventions (e.g., PCIC insured 455k farmers); georeferencing scaling nationwide; basis for GAA budgeting since 2013; RSBSA-ID as 'digital passport' to benefits","challenges":"Exclusions of legitimate farmers (e.g., 64% PCIC clients missing initially), inaccuracies/duplicates, outdated data without validation, linking difficulties with other DBs, unclear farmer definitions","sources":"PIDS Evaluation 2017, DA RSBSA Finder, YouTube GtG Philippines 2024, Capas Tarlac RSBSA, DA Region8 FB, DBM Report, DA Region11 FB"},{"country":"Kyrgyz Republic","iso":"KG","region":"Europe & Central Asia","lat":42.8746,"lng":74.5698,"registryName":"\"Реестр Фермеров\" (Farmer Registry), Unified Farmers’ Registry, i-D...","registryFullName":"\"Реестр Фермеров\" (Farmer Registry), Unified Farmers’ Registry, i-Dyikan platform","yearEstablished":2025,"farmersRegistered":400000,"farmersRegisteredLabel":"Over 400,000 (24.kg, Dec 9, 2025)","leadAgency":"Ministry of Water Resources, Agriculture and Processing Industry; technical operator: AgroSmart (agro.gov.kg)","status":"Operational and scaling under national project «30+20+10»; personal accounts launched end-2025; f...","maturityLevel":"Operational","nationalIdIntegration":true,"geospatialData":true,"dpiIntegration":true,"useCases":["Credit & Financial Services","Extension & Advisory Services","Livestock Management","Market Access & Linkages","Policy & Planning","Subsidies & Input Distribution","Traceability & Compliance"],"useCaseDetails":"Preferential loans: i-Dyikan enables online registration/queueing/tracking (launched Feb 2026, with Aiyl/Eldik Banks); Subsidies: Dotation AIS for seed subsidies/monitoring; Livestock: LITS/Tunduk for traceability; Services: Personal accounts for verification/applications; Export: Digitized certification/phytosanitary (all procedures online)","dataPoints":["Passport data","land plots (size/location)","livestock","machinery/equipment","crops","assets"],"keyPartners":["FAO (e-agri strategy","traceability)","KOICA (data centers)","IFAD/World Bank (projects)","AgroSmart (operator)"],"technologyPlatform":"Web/mobile platforms (i-Dyikan, AgroSmart), cloud-based corporate portals, GIS/interactive maps, Tunduk integration","achievements":"400k+ farmers registered; full digitalization of key procedures; reduced bureaucracy/time/costs; accurate records/sales (e.g. farmer examples)","challenges":"Digital literacy gaps (addressed via Farmer Service Centers); rural infrastructure; training local staff","sources":"24.kg Oct 2025, 24.kg Dec 2025, agro.gov.kg, Akchabar Feb 2026, MENAFN Nov 2025, FAO, IFAD"},{"country":"Serbia","iso":"RS","region":"Europe & Central Asia","lat":44.7866,"lng":20.4489,"registryName":"eAgrar (electronic system for Register of Agricultural Holdings - R...","registryFullName":"eAgrar (electronic system for Register of Agricultural Holdings - Registar Poljoprivrednih Gazdinstava, RPG)","yearEstablished":2023,"farmersRegistered":495123,"farmersRegisteredLabel":"495,123 agricultural holdings (as of December 2024, 97% of 2023 Agricultural Census total)","leadAgency":"Directorate for Agrarian Payments (Uprava za Agrarna Plaćanja, UAP) under Ministry of Agriculture, Forestry and Water Management (MAFWM)","status":"Fully operational since 2023; mandatory for subsidy access; active in 2026 with ongoing subsidy a...","maturityLevel":"Advanced","nationalIdIntegration":true,"geospatialData":true,"dpiIntegration":true,"useCases":["Credit & Financial Services","Livestock Management","Policy & Planning","Subsidies & Input Distribution","Traceability & Compliance"],"useCaseDetails":"Subsidies: Per-hectare incentives (36B RSD 2026, apps March-April); livestock fattening/breeding premiums; milk premiums quarterly; IPARD III Measure 1 fruit investments (2025 calls, 4th call Dec 2025); credit support (1.3B RSD 2026, 0-3% interest); ~500M RSD daily payouts; controls for actual cultivation","dataPoints":["Farmer/holder demographics (name","JMBG","address","TIN/PIB)","farm ID/number","land parcels (cadastral info","size","crops/plants per codebook min 0.5ha)","livestock (marked animals per codebook)","processing activities"],"keyPartners":["World Bank (project funding)","EBRD (implementation support via NALED)","NALED","FAO (land admin support)","EU (IPARD III","CAP alignment)"],"technologyPlatform":"Web portal (eagrar.gov.rs, erpg.eagrar.gov.rs), mobile-friendly; eID authentication; centralized electronic database; linked to 20+ public registries; online forms/submissions","achievements":"97% coverage of farms (495k/510k); electronic subsidy apps reduce process 4x, costs 80%; daily payouts ~500M RSD; supports IPARD III (€288M); aligns with EU CAP","challenges":"Digital literacy gaps (25% farmers need assistance, older/less educated); regional economic disparities; software complexity for small farmers; need for training/extension services","sources":"Journal of Central European Agriculture, FAO, NALED eAgrar support, UAP, eAgrar, Data.gov.rs RPG, Law office RPG, NALED news"},{"country":"Ukraine","iso":"UA","region":"Europe & Central Asia","lat":50.4501,"lng":30.5234,"registryName":"State Agrarian Registry (SAR / Державний Аграрний Реєстр - DAR) at ...","registryFullName":"State Agrarian Registry (SAR / Державний Аграрний Реєстр - DAR) at dar.gov.ua","yearEstablished":2022,"farmersRegistered":20000000,"farmersRegisteredLabel":"&gt;210,000 registered agricultural producers (Feb 2026, managing ~20M ha land) [EEAS Feb 2026], AgroReview Mar 2026","leadAgency":"Ministry of Economy, Environment and Agriculture of Ukraine (transitioned from Ministry of Agrarian Policy and Food)","status":"Fully operational under full national ownership (technical transfer completed 2026); core digital...","maturityLevel":"Advanced","nationalIdIntegration":true,"geospatialData":true,"dpiIntegration":true,"useCases":["Credit & Financial Services","Insurance & Risk Management","Land Administration","Livestock Management","Market Access & Linkages","Policy & Planning","Subsidies & Input Distribution","Traceability & Compliance"],"useCaseDetails":"**Subsidies/Support**: UAH 3.88B to 31.6k producers (2024); targets 80% state aid via SAR by Q1 2026 [graintrade]; **FAO Emergency**: 50 programs since 2022 for vulnerable producers across regions [EEAS]; **Demining**: UAH 3B program, state covers 80% costs for owned/leased land [demine.gov.ua]; **Loans 5-7-9%**: 35 banks integrated for online verification [kmu.gov.ua]; **Analysis**: Public depersonalized stats on users/land/livestock/regions/applications [AgroReview]","dataPoints":["Demographics (name","tax ID)","economic activities (from Unified State Register)","land bank/parcels (area","from cadastre/property register)","livestock heads (cows 573k","sheep/goats","from animal register)","ag machinery","organic certified data"],"keyPartners":["European Union (EU)","World Bank","FAO (nearly 50 programs via SAR) [EEAS]"],"technologyPlatform":"Web platform (dar.gov.ua), automated electronic system w/ personal electronic cabinet; qualified electronic signature/BankID auth; auto data integration; mobile compatible; recent auto-verification, open API, analytical portal (bi.dar.gov.ua) [UkraineInvest], dar.gov.ua","achievements":"Launched/scaled during full-scale war; earned farmer trust; 210k+ users (80% small/medium producers); channels &gt;80% state ag funds (2025); FAO first user (50 programs); new analytical module; groundwork for EU CAP/Paying Agency; UAH 8B+ via 50+ programs since 2022 [EEAS], kmu.gov.ua","challenges":"Ongoing war impacts (energy crisis, logistics/port attacks, labor shortages/migration/mobilization, infrastructure damage); data accuracy in integrated registers; cybersecurity/data protection; rural digital access; soil nutrient depletion affecting broader ag [mezha.net]","sources":"UkraineInvest 2022, EEAS Feb 2026, dar.gov.ua, KSE PDF, AgroReview, graintrade, kmu.gov.ua, demine.gov.ua, mezha.net"},{"country":"Mexico","iso":"MX","region":"Latin America","lat":19.4326,"lng":-99.1332,"registryName":"Padrón de Solicitantes y Beneficiarios de Agricultura (SURI); Padró...","registryFullName":"Padrón de Solicitantes y Beneficiarios de Agricultura (SURI); Padrón Ganadero Nacional (PGN)","yearEstablished":2003,"farmersRegistered":1800000,"farmersRegisteredLabel":"~1.8 million (Producción para el Bienestar beneficiaries, 2024, largest program-linked count); older PGN: >1 million UPP N+ News","leadAgency":"Secretaría de Agricultura y Desarrollo Rural (SADER); PGN with CNOG","status":"Fully operational (2025-2026); digital portals for management and applications active SURI","maturityLevel":"Advanced","nationalIdIntegration":true,"geospatialData":false,"dpiIntegration":true,"useCases":["Credit & Financial Services","Insurance & Risk Management","Livestock Management","Subsidies & Input Distribution","Traceability & Compliance"],"useCaseDetails":"Producción para el Bienestar: 1.8M small/medium producers received payments 2024 (up to 24k MXN/ha); Fertilizers: Lists of authorized producers 2025; PGN/SINIIGA: Traceability, mobilization guides (REEMO), used for animal health/safety SADER, PGN","dataPoints":["Demographics (name","CURP)","farm location/size","crops/livestock","production units (UPP for PGN)","ownership docs"],"keyPartners":["CNOG (for PGN)","World Bank (potential via Connect4Impact","no specific project confirmed)"],"technologyPlatform":"Web portals (SURI, PGN sites), online registration/tracking; Llave MX for auth; in-person at CADER","achievements":"Supports millions in subsidies (e.g., 1.8M in PPB 2024); PGN/SINIIGA enables national livestock traceability since 2003 USHA","challenges":"Primarily in-person registration; no unified national digital registry found; exact totals hard to pinpoint; rural connectivity?","sources":"SURI Portal, PGN, SADER Data, N+ News, USHA SINIIGA, World Bank Connect4Impact"}];
+
+const UC_ICONS = {
+  'Subsidies & Input Distribution':'🌾',
+  'Extension & Advisory Services':'📱',
+  'Insurance & Risk Management':'🛡️',
+  'Credit & Financial Services':'💰',
+  'Market Access & Linkages':'🏪',
+  'Traceability & Compliance':'🔍',
+  'Land Administration':'🗺️',
+  'Policy & Planning':'📊',
+  'Livestock Management':'🐄'
+};
+const UC_DESCRIPTIONS = {
+  'Subsidies & Input Distribution':'Targeting and distributing agricultural inputs, fertilizers, and subsidies to registered farmers through digital channels.',
+  'Extension & Advisory Services':'Providing tailored agricultural advice, climate-smart practices, and digital extension services to farmers.',
+  'Insurance & Risk Management':'Enabling crop and livestock insurance enrollment, premium subsidies, and climate risk management.',
+  'Credit & Financial Services':'Facilitating access to agricultural credit, loans, and financial products through registry data.',
+  'Market Access & Linkages':'Connecting farmers to markets, buyers, and value chains through digital platforms.',
+  'Traceability & Compliance':'Tracking agricultural products from farm to market and ensuring regulatory compliance.',
+  'Land Administration':'Managing land records, tenure rights, and parcel mapping linked to farmer profiles.',
+  'Policy & Planning':'Using registry data for evidence-based agricultural policy, planning, and resource allocation.',
+  'Livestock Management':'Registering and tracking livestock holdings, health records, and vaccination campaigns.'
+};
+const ALL_UC = Object.keys(UC_ICONS);
+const maturityColors = {Advanced:'#437a22',Operational:'#006494',Emerging:'#d19900','No System':'#6b7280'};
+const maturityClasses = {Advanced:'advanced',Operational:'operational',Emerging:'emerging','No System':'nosystem'};
+
+let chartInstances = {};
+
+function destroyChart(id) {
+  if (chartInstances[id]) { chartInstances[id].destroy(); delete chartInstances[id]; }
+}
+
+function fmt(n) {
+  if (n >= 1e9) return (n/1e9).toFixed(1)+'B';
+  if (n >= 1e6) return (n/1e6).toFixed(1)+'M';
+  if (n >= 1e3) return (n/1e3).toFixed(1)+'K';
+  return n.toLocaleString();
+}
+
+function getTextColor() {
+  return document.documentElement.getAttribute('data-theme') === 'dark' ? '#d1d5db' : '#4b5563';
+}
+function getGridColor() {
+  return document.documentElement.getAttribute('data-theme') === 'dark' ? 'rgba(255,255,255,.08)' : 'rgba(0,0,0,.06)';
+}
+
+function renderKPIs() {
+  const total = DATA.length;
+  const totalFarmers = DATA.reduce(function(s,c){return s + c.farmersRegistered}, 0);
+  const idCount = DATA.filter(function(c){return c.nationalIdIntegration}).length;
+  const geoCount = DATA.filter(function(c){return c.geospatialData}).length;
+  const dpiCount = DATA.filter(function(c){return c.dpiIntegration}).length;
+
+  var kpis = [
+    {value: total, label: 'Total Countries', sub: ''},
+    {value: '132.9M', label: 'Farmers Registered', sub: totalFarmers.toLocaleString() + ' total'},
+    {value: idCount + '/18', label: 'National ID Integration', sub: Math.round(idCount/18*100) + '% of countries'},
+    {value: geoCount + '/18', label: 'Geospatial Data', sub: Math.round(geoCount/18*100) + '% of countries'},
+    {value: dpiCount + '/18', label: 'DPI Integration', sub: Math.round(dpiCount/18*100) + '% of countries'},
+  ];
+
+  document.getElementById('kpiRow').innerHTML = kpis.map(function(k) {
+    return '<div class="kpi-card"><div class="kpi-value">' + k.value + '</div><div class="kpi-label">' + k.label + '</div>' + (k.sub ? '<div class="kpi-sub">' + k.sub + '</div>' : '') + '</div>';
+  }).join('');
+  animateKPIs();
+}
+
+function animateKPIs() {
+  document.querySelectorAll('.kpi-card .kpi-value').forEach(function(el) {
+    var text = el.textContent;
+    if (/^\d+$/.test(text)) {
+      var target = parseInt(text);
+      var current = 0;
+      var step = Math.max(1, Math.ceil(target / 40));
+      var interval = setInterval(function() {
+        current += step;
+        if (current >= target) { current = target; clearInterval(interval); }
+        el.textContent = current;
+      }, 30);
+    }
+  });
+}
+
+function renderMaturityBadges() {
+  var levels = ['Advanced','Operational','Emerging','No System'];
+  var counts = {};
+  levels.forEach(function(l){ counts[l] = DATA.filter(function(c){return c.maturityLevel === l}).length; });
+
+  document.getElementById('maturityRow').innerHTML = levels.map(function(l) {
+    return '<div class="maturity-badge ' + maturityClasses[l] + '" onclick="filterByMaturity(\'' + l + '\')" title="Click to view ' + l + ' countries"><span class="badge-count">' + counts[l] + '</span> ' + l + '</div>';
+  }).join('');
+}
+
+function filterByMaturity(level) {
+  showSection('profiles', document.querySelector('[data-section="profiles"]'));
+  document.getElementById('maturityFilter').value = level;
+  filterCountries();
+}
+
+function renderCharts() {
+  var txtColor = getTextColor();
+  var gridColor = getGridColor();
+
+  // Maturity Doughnut
+  var levels = ['Advanced','Operational','Emerging','No System'];
+  var mCounts = levels.map(function(l){return DATA.filter(function(c){return c.maturityLevel === l}).length});
+  destroyChart('chartMaturity');
+  chartInstances['chartMaturity'] = new Chart(document.getElementById('chartMaturity'), {
+    type: 'doughnut',
+    data: {
+      labels: levels,
+      datasets: [{data: mCounts, backgroundColor: levels.map(function(l){return maturityColors[l]}), borderWidth: 0}]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      plugins: {
+        legend: {position:'bottom', labels:{color:txtColor, padding:14, font:{size:12}}}
+      }
+    }
+  });
+
+  // Regional Bar
+  var regions = {};
+  DATA.forEach(function(c){ regions[c.region] = (regions[c.region]||0) + 1; });
+  var regionLabels = Object.keys(regions).sort(function(a,b){return regions[b]-regions[a]});
+  var regionValues = regionLabels.map(function(r){return regions[r]});
+  destroyChart('chartRegion');
+  chartInstances['chartRegion'] = new Chart(document.getElementById('chartRegion'), {
+    type: 'bar',
+    data: {
+      labels: regionLabels,
+      datasets: [{data: regionValues, backgroundColor: '#01696f', borderRadius: 4, barThickness: 28}]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: true,
+      plugins: { legend: {display:false} },
+      scales: {
+        x: {grid:{color:gridColor}, ticks:{color:txtColor}},
+        y: {grid:{display:false}, ticks:{color:txtColor, font:{size:11}}}
+      }
+    }
+  });
+
+  // Use Cases Frequency
+  var ucCounts = {};
+  ALL_UC.forEach(function(uc){ucCounts[uc] = DATA.filter(function(c){return c.useCases.indexOf(uc)>=0}).length});
+  var ucSorted = ALL_UC.slice().sort(function(a,b){return ucCounts[b]-ucCounts[a]});
+  destroyChart('chartUseCases');
+  chartInstances['chartUseCases'] = new Chart(document.getElementById('chartUseCases'), {
+    type: 'bar',
+    data: {
+      labels: ucSorted,
+      datasets: [{data: ucSorted.map(function(u){return ucCounts[u]}), backgroundColor: '#01696f', borderRadius: 4, barThickness: 22}]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: {display:false} },
+      scales: {
+        x: {grid:{color:gridColor}, ticks:{color:txtColor}},
+        y: {grid:{display:false}, ticks:{color:txtColor, font:{size:11}}}
+      }
+    }
+  });
+  document.getElementById('chartUseCases').parentElement.style.minHeight = '320px';
+
+  // Integration Grouped Bar
+  var idC = DATA.filter(function(c){return c.nationalIdIntegration}).length;
+  var geoC = DATA.filter(function(c){return c.geospatialData}).length;
+  var dpiC = DATA.filter(function(c){return c.dpiIntegration}).length;
+  destroyChart('chartIntegration');
+  chartInstances['chartIntegration'] = new Chart(document.getElementById('chartIntegration'), {
+    type: 'bar',
+    data: {
+      labels: ['National ID','Geospatial Data','DPI Integration'],
+      datasets: [
+        {label:'Yes', data:[idC,geoC,dpiC], backgroundColor:'#01696f', borderRadius:4},
+        {label:'No', data:[18-idC,18-geoC,18-dpiC], backgroundColor:'#d1d5db', borderRadius:4}
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      plugins: { legend: {labels:{color:txtColor}} },
+      scales: {
+        x: {grid:{display:false}, ticks:{color:txtColor}},
+        y: {grid:{color:gridColor}, ticks:{color:txtColor}, beginAtZero:true}
+      }
+    }
+  });
+
+  // Top 5
+  var top5 = DATA.slice().sort(function(a,b){return b.farmersRegistered-a.farmersRegistered}).slice(0,5);
+  destroyChart('chartTop5');
+  var ctx5 = document.getElementById('chartTop5').getContext('2d');
+  var grad = ctx5.createLinearGradient(0,0,ctx5.canvas.width,0);
+  grad.addColorStop(0,'#01696f');
+  grad.addColorStop(1,'#02969e');
+  chartInstances['chartTop5'] = new Chart(ctx5, {
+    type: 'bar',
+    data: {
+      labels: top5.map(function(c){return c.country}),
+      datasets: [{
+        data: top5.map(function(c){return c.farmersRegistered}),
+        backgroundColor: grad,
+        borderRadius: 4,
+        barThickness: 32
+      }]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: true,
+      plugins: {
+        legend: {display:false},
+        tooltip:{callbacks:{label:function(ctx){return fmt(ctx.raw) + ' farmers'}}}
+      },
+      scales: {
+        x: {grid:{color:gridColor}, ticks:{color:txtColor, callback: function(v){return fmt(v)}}},
+        y: {grid:{display:false}, ticks:{color:txtColor, font:{size:12, weight:600}}}
+      }
+    }
+  });
+}
+
+function renderCountryCards() {
+  var regions = [];
+  var regionSet = {};
+  DATA.forEach(function(c){ if(!regionSet[c.region]){ regionSet[c.region]=1; regions.push(c.region); }});
+  regions.sort();
+  var mats = ['Advanced','Operational','Emerging','No System'];
+  var rSel = document.getElementById('regionFilter');
+  regions.forEach(function(r){ var o = document.createElement('option'); o.value=r; o.textContent=r; rSel.appendChild(o); });
+  var mSel = document.getElementById('maturityFilter');
+  mats.forEach(function(m){ var o = document.createElement('option'); o.value=m; o.textContent=m; mSel.appendChild(o); });
+  renderCards(DATA);
+}
+
+function renderCards(list) {
+  document.getElementById('countryGrid').innerHTML = list.map(function(c) {
+    return '<div class="country-card" onclick="openModal(\'' + c.iso + '\')">' +
+      '<div class="country-card-header">' +
+        '<img src="https://flagcdn.com/w40/' + c.iso.toLowerCase() + '.png" alt="' + c.country + ' flag" loading="lazy">' +
+        '<h4>' + c.country + '</h4>' +
+        '<span class="maturity-pill ' + maturityClasses[c.maturityLevel] + '">' + c.maturityLevel + '</span>' +
+      '</div>' +
+      '<span class="region-pill">' + c.region + '</span>' +
+      '<div class="registry-name" title="' + escapeAttr(c.registryFullName) + '">' + c.registryName + '</div>' +
+      '<div class="farmers-count">' + (c.farmersRegistered > 0 ? fmt(c.farmersRegistered) : 'N/A') + '</div>' +
+      '<div class="integration-indicators">' +
+        '<span class="' + (c.nationalIdIntegration?'ind-yes':'ind-no') + '">' + (c.nationalIdIntegration?'✓':'✗') + ' ID</span>' +
+        '<span class="' + (c.geospatialData?'ind-yes':'ind-no') + '">' + (c.geospatialData?'✓':'✗') + ' Geo</span>' +
+        '<span class="' + (c.dpiIntegration?'ind-yes':'ind-no') + '">' + (c.dpiIntegration?'✓':'✗') + ' DPI</span>' +
+      '</div>' +
+      '<span class="uc-count-badge">' + c.useCases.length + ' use case' + (c.useCases.length!==1?'s':'') + '</span>' +
+    '</div>';
+  }).join('');
+}
+
+function escapeAttr(str) {
+  return str.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function escapeHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function filterCountries() {
+  var q = document.getElementById('searchInput').value.toLowerCase();
+  var region = document.getElementById('regionFilter').value;
+  var maturity = document.getElementById('maturityFilter').value;
+  var filtered = DATA.filter(function(c) {
+    if (q && c.country.toLowerCase().indexOf(q) < 0) return false;
+    if (region && c.region !== region) return false;
+    if (maturity && c.maturityLevel !== maturity) return false;
+    return true;
+  });
+  renderCards(filtered);
+}
+
+function openModal(iso) {
+  var c = DATA.find(function(d){return d.iso === iso});
+  if (!c) return;
+  var m = document.getElementById('modal');
+  var html = '<button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>';
+  html += '<div class="modal-header">';
+  html += '<img src="https://flagcdn.com/w80/' + c.iso.toLowerCase() + '.png" alt="' + c.country + ' flag">';
+  html += '<div><h2>' + c.country + '</h2>';
+  html += '<span class="region-pill" style="margin-right:6px">' + c.region + '</span>';
+  html += '<span class="maturity-pill ' + maturityClasses[c.maturityLevel] + '">' + c.maturityLevel + '</span>';
+  html += '</div></div>';
+  html += '<div class="modal-body">';
+
+  // Integration pills
+  html += '<div class="integration-pills">';
+  html += '<span class="int-pill ' + (c.nationalIdIntegration?'yes':'no') + '">' + (c.nationalIdIntegration?'✓':'✗') + ' National ID</span>';
+  html += '<span class="int-pill ' + (c.geospatialData?'yes':'no') + '">' + (c.geospatialData?'✓':'✗') + ' Geospatial</span>';
+  html += '<span class="int-pill ' + (c.dpiIntegration?'yes':'no') + '">' + (c.dpiIntegration?'✓':'✗') + ' DPI</span>';
+  html += '</div>';
+
+  // Detail grid
+  html += '<div class="detail-grid">';
+  html += '<div class="detail-item"><label>Registry Name</label><p>' + escapeHtml(c.registryFullName) + '</p></div>';
+  html += '<div class="detail-item"><label>Lead Agency</label><p>' + escapeHtml(c.leadAgency) + '</p></div>';
+  html += '<div class="detail-item"><label>Year Established</label><p>' + c.yearEstablished + '</p></div>';
+  html += '<div class="detail-item"><label>Farmers Registered</label><p style="color:var(--primary);font-weight:600">' + (c.farmersRegistered > 0 ? c.farmersRegistered.toLocaleString() : 'N/A') + '</p><p style="font-size:.75rem;color:var(--text-muted)">' + escapeHtml(c.farmersRegisteredLabel) + '</p></div>';
+  html += '<div class="detail-item" style="grid-column:1/-1"><label>Status</label><p>' + escapeHtml(c.status) + '</p></div>';
+  html += '</div>';
+
+  // Use Cases
+  html += '<div class="modal-section"><h4>Use Cases</h4><div class="tag-pills">';
+  c.useCases.forEach(function(u){ html += '<span class="tag-pill">' + (UC_ICONS[u]||'') + ' ' + u + '</span>'; });
+  html += '</div></div>';
+
+  // Use Case Details
+  if (c.useCaseDetails) {
+    html += '<div class="modal-section"><h4>Use Case Details</h4><p class="text-block">' + escapeHtml(c.useCaseDetails) + '</p></div>';
+  }
+
+  // Data Points
+  html += '<div class="modal-section"><h4>Data Points</h4><p>' + c.dataPoints.map(escapeHtml).join(', ') + '</p></div>';
+
+  // Key Partners
+  html += '<div class="modal-section"><h4>Key Partners</h4><div class="tag-pills">';
+  c.keyPartners.forEach(function(p){ html += '<span class="partner-pill">' + escapeHtml(p) + '</span>'; });
+  html += '</div></div>';
+
+  // Technology
+  html += '<div class="modal-section"><h4>Technology Platform</h4><p>' + escapeHtml(c.technologyPlatform) + '</p></div>';
+
+  // Achievements & Challenges
+  if (c.achievements) {
+    html += '<div class="accent-box green"><strong>Achievements:</strong> ' + escapeHtml(c.achievements) + '</div>';
+  }
+  if (c.challenges) {
+    html += '<div class="accent-box amber"><strong>Challenges:</strong> ' + escapeHtml(c.challenges) + '</div>';
+  }
+
+  // Sources
+  if (c.sources) {
+    html += '<div class="modal-sources"><strong>Sources:</strong> ' + escapeHtml(c.sources) + '</div>';
+  }
+
+  html += '</div>';
+  m.innerHTML = html;
+  document.getElementById('modalBackdrop').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalBackdrop').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
+
+function renderUseCases() {
+  var ucCounts = {};
+  var ucCountries = {};
+  ALL_UC.forEach(function(uc) {
+    ucCounts[uc] = DATA.filter(function(c){return c.useCases.indexOf(uc)>=0}).length;
+    ucCountries[uc] = DATA.filter(function(c){return c.useCases.indexOf(uc)>=0}).map(function(c){return c.country});
+  });
+
+  var sorted = ALL_UC.slice().sort(function(a,b){return ucCounts[b]-ucCounts[a]});
+
+  var txtColor = getTextColor();
+  var gridColor = getGridColor();
+  destroyChart('chartUCFreq');
+  chartInstances['chartUCFreq'] = new Chart(document.getElementById('chartUCFreq'), {
+    type: 'bar',
+    data: {
+      labels: sorted,
+      datasets: [{data: sorted.map(function(u){return ucCounts[u]}), backgroundColor:'#01696f', borderRadius:4, barThickness:24}]
+    },
+    options: {
+      indexAxis:'y', responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{grid:{color:gridColor},ticks:{color:txtColor}},
+        y:{grid:{display:false},ticks:{color:txtColor,font:{size:11}}}
+      }
+    }
+  });
+  document.getElementById('chartUCFreq').parentElement.style.minHeight='320px';
+
+  document.getElementById('ucGrid').innerHTML = sorted.map(function(uc) {
+    var pct = Math.round(ucCounts[uc]/18*100);
+    return '<div class="uc-card">' +
+      '<div class="uc-icon">' + UC_ICONS[uc] + '</div>' +
+      '<h4>' + uc + '</h4>' +
+      '<div class="uc-count">' + ucCounts[uc] + ' countr' + (ucCounts[uc]===1?'y':'ies') + '</div>' +
+      '<div class="uc-progress"><div class="uc-progress-bar" style="width:' + pct + '%"></div></div>' +
+      '<div class="country-list">' + ucCountries[uc].map(function(n){return '<span>' + n + '</span>'}).join('') + '</div>' +
+      '<div class="uc-desc">' + (UC_DESCRIPTIONS[uc] || '') + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function showSection(id, el) {
+  document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active')});
+  document.getElementById('sec-'+id).classList.add('active');
+  document.querySelectorAll('.sidebar-nav a').forEach(function(a){a.classList.remove('active')});
+  if (el) el.classList.add('active');
+  if (window.innerWidth < 900) toggleSidebar();
+  if (id === 'usecases') renderUseCases();
+  if (id === 'overview') renderCharts();
+}
+
+function toggleSidebar() {
+  var sb = document.getElementById('sidebar');
+  var ov = document.getElementById('overlay');
+  sb.classList.toggle('open');
+  ov.classList.toggle('show');
+}
+
+function toggleTheme() {
+  var html = document.documentElement;
+  var isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('themeLabel').textContent = isDark ? 'Dark mode' : 'Light mode';
+  renderCharts();
+  if (document.getElementById('sec-usecases').classList.contains('active')) renderUseCases();
+}
+
+// INIT
+renderKPIs();
+renderMaturityBadges();
+renderCharts();
+renderCountryCards();
+
+</script>
+</body>
+</html>
